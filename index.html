@@ -1,0 +1,92 @@
+<!DOCTYPE HTML> 
+<html> 
+ 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<title>Sound Defender</title> 
+<style type="text/css" media="all">
+/* CSS */
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #ccc;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 11pt;
+}
+button {
+	font-size: 11pt;
+	margin: 2px 0;
+	padding: 0.20em 0.75em;
+	border: none;
+	cursor: pointer;
+	background-color: #555;
+	color: #fff;
+	border-radius: 3px;
+	box-shadow: 1px 1px 2px rgba(37,82,133,0.35);
+}
+button:hover, button:active {
+	background-color: #444;
+	box-shadow: 0px 0px 6px rgba(255,255,0,0.75);
+}
+#canvasholder {
+	position: relative;
+	width: 600px;
+	height: 600px;
+	margin: 100px auto 10px auto;
+	border: 1px solid black;
+}
+#canvasholder #hud {
+	font-size: 125%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 8px;
+	text-align: right;
+}
+#stats {
+	text-align: center;
+}
+#lights {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+</style>
+<script type="text/javascript">
+    var djConfig = {
+        isDebug: false,
+        parseOnLoad: true,
+        baseUrl: "./",
+        modulePaths: { }
+    };
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.5/dojo/dojo.xd.js" type="text/javascript"></script>
+<script src="/libs/uow.js" type="text/javascript"></script>
+<script src="Turret.js" type="text/javascript"></script>
+<script src="Enemy.js" type="text/javascript"></script>
+<script src="SoundDefender.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="canvasholder">
+	<div id="hud">
+		<p>Score: <span id="score">0</span></p>
+		<p>Lives: <span id="lives">0</span></p>
+	</div>
+	<canvas id="maincanvas" width="600" height="600"></canvas>
+	<div id="lights"></div>
+</div>
+<div id="stats">
+	<p>High Score: <span id="highscore">0</span></p>
+	<button id="togglelightsbtn" onclick="toggleLights(this);return false;">Turn lights off</button><br />
+	<button id="playagainbtn" onclick="playAgain(this);return false;">Play Again</button>
+</div>
+
+<script src="game.js" type="text/javascript"></script>
+</body>
+</html>
